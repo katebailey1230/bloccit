@@ -13,7 +13,10 @@ source 'https://rubygems.org'
   gem 'sqlite3', '~> 1.3', '>= 1.3.13'
   gem 'rails_12factor'
  end
- 
+
+ group :development, :test do
+   gem 'rspec-rails', '~> 3.0'
+ end
 
  # Use SCSS for stylesheets
  gem 'sass-rails', '~> 5.0'
