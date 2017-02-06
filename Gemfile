@@ -12,6 +12,7 @@ source 'https://rubygems.org'
  group :development do
   gem 'sqlite3', '~> 1.3', '>= 1.3.13'
   gem 'rails_12factor'
+  gem 'pry-rails'     
  end
 
  group :development, :test do
