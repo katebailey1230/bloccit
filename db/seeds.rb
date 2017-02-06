@@ -21,6 +21,10 @@
    )
  end
  
+ puts "#{Post.count}"
+ post.find_or_create_by(title: "Whitey", body: "Bulger")
+ puts "#{Post.count}"
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
