@@ -4,9 +4,8 @@ source 'https://rubygems.org'
  gem 'rails', '4.2.5'
  
  # #1
- group :production do
-   gem 'pg', '~> 0.18.4'
- end
+
+
  
  # #2
  group :development do
