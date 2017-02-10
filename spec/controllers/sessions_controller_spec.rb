@@ -53,7 +53,7 @@ RSpec.describe SessionsController, type: :controller do
        expect(assigns(:session)).to be_nil
      end
  
-     it "flashes #notice" do
+     it "flashes notice" do
        delete :destroy, id: my_user.id
        expect(flash[:notice]).to be_present
         expect(avatar_url).to be_present 
