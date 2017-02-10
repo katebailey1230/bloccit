@@ -5,12 +5,7 @@ source 'https://rubygems.org'
  
  # #1
  group :production do
-<<<<<<< HEAD
    gem 'pg', '~> 0.19.0'
-=======
-   gem 'pg', '~> 0.18.4'
->>>>>>> checkpoint-23
-
  end
  
  # #2
