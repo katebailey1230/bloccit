@@ -11,11 +11,11 @@ RSpec.describe Post, type: :model do
    let(:post) { topic.posts.create!(title: title, body: body) }
  
    it { is_expected.to belong_to(:topic) }
-<<<<<<< HEAD
+
     it { is_expected.to validate_presence_of(:title) }
-=======
+
      it { is_expected.to validate_presence_of(:title) }
->>>>>>> checkpoint-23
+
    it { is_expected.to validate_presence_of(:body) }
    it { is_expected.to validate_presence_of(:topic) }
  
