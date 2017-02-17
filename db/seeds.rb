@@ -36,20 +36,12 @@
  # #3
  100.times do
    Comment.create!(
- # #4
+    user: users.sample,
      post: posts.sample,
      body: RandomData.random_paragraph
    )
  end
- 
-# Create Questions
-50.times do
-Question.create!(
-    title: RandomData.random_sentence,
-    body:  RandomData.random_paragraph,
-    resolved: false
-    )
-end
+
 
 # Create an admin user
  admin = User.create!(
