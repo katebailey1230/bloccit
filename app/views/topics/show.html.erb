@@ -8,7 +8,9 @@
    <div class="col-md-8">
      <p class="lead"><%= @topic.description %></p>
        <%= @topic.posts.each do |post| %>
+       <div class="media">
        <%= render partial: 'posts/post', locals: {post: post} %>
+       <%= render partial: 'votes/voter', locals: { post: post } %>
      <% end %>
    </div>
      <% if current_user %>
