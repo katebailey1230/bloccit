@@ -91,18 +91,19 @@ RSpec.describe User, type: :model do
     end
 
     describe "#favorite_for(post)" do
-     before do
-       topic = Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)
-       @post = topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user)
+        before do
+           @new_user = create(:user)
+           topic = Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)
+           @post = topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: @new_user)
         end
  
      it "returns `nil` if the user has not favorited the post" do
-       expect(user.favorite_for(@post)).to be_nil
+       expect(@new_user.favorite_for(@post)).to be_nil
      end
  
      it "returns the appropriate favorite if it exists" do
-       favorite = user.favorites.where(post: @post).create
-       expect(user.favorite_for(@post)).to eq(favorite)
+       favorite = @new_user.favorites.where(post: @post).create
+       expect(@new_user.favorite_for(@post)).to eq(favorite)
      end
    end
 
