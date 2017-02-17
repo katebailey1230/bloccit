@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
     before_save { self.email = email.downcase if email.present? }
     before_save {cap_name}
     before_save { self.role ||= :member }
+    before_save { self.role ||= :moderator }
 
  # #3
    validates :name, length: { minimum: 1, maximum: 100 }, presence: true
@@ -17,7 +18,7 @@ class User < ActiveRecord::Base
 
  # #6
    has_secure_password
-    enum role: [:member, :admin]
+    enum role: [:member, :admin, :moderator]
     
     def cap_name
         if name
