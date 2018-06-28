@@ -4,7 +4,6 @@ class UsersController < ApplicationController
    end
     
      def create
- # #9
      @user = User.new
      @user.name = params[:user][:name]
      @user.email = params[:user][:email]
@@ -23,16 +22,15 @@ class UsersController < ApplicationController
    end
 
     def confirm
-
      @user = User.new
      @user.name = params[:user][:name]
      @user.email = params[:user][:email]
      @user.password = params[:user][:password]
      @user.password_confirmation = params[:user][:password_confirmation]
-    
    end
+	
     def show
      @user = User.find(params[:id])
-    @posts = @user.posts.visible_to(current_user)
+     @posts = @user.posts.visible_to(current_user)
    end
 end
