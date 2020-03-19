@@ -5,7 +5,7 @@ source 'https://rubygems.org'
  
  # #1
  group :production do
-   gem 'pg', '~> 0.19.0'
+   gem 'pg', '~> 1.2.3'
  end
  
  # #2
